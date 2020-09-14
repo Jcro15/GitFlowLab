@@ -13,7 +13,12 @@ public class StatisticsModule {
     }
 
     public static double standardDeviation(double[] data) {
-        return 0.0;
+        double sum=0.0;
+        double mean=mean(data);
+        for (Double i:data) {
+            sum+=Math.pow(i-mean,2);
+        }
+        return Math.sqrt(sum/(data.length-1));
     }
 
     public static double mode(double[] data) {
